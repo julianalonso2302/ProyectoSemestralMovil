@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Reservar Padel</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-item>
+        <ion-label>Canchas disponibles</ion-label>
+        <ion-select placeholder="Selecciona una cancha" [(ngModel)]="selectedCancha">
+            <ion-select-option *ngFor="let cancha of canchasDisponibles" [value]="cancha.id">{{ cancha.nombre }}</ion-select-option>
+        </ion-select>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Fecha</ion-label>
+        <ion-datetime [(ngModel)]="selectedDate" [min]="minDate" displayFormat="DD/MM/YYYY"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Hora</ion-label>
+        <ion-select placeholder="Selecciona una hora" [(ngModel)]="selectedHour">
+            <ion-select-option *ngFor="let hora of horasPredeterminadas" [value]="hora">{{ hora }}</ion-select-option>
+        </ion-select>
+    </ion-item>
+
+    <ion-item>
+        <ion-label position="stacked">Correo</ion-label>
+        <ion-input type="email" [(ngModel)]="correo" placeholder="Ingresa tu correo"></ion-input>
+    </ion-item>
+
+    <div class="button-container">
+        <ion-button expand="full" (click)="confirmarReserva()">Reservar</ion-button>
+    </div>
+</ion-content>

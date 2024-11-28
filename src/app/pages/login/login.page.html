@@ -1,0 +1,39 @@
+<ion-content>
+    <div class="login-section ion-padding">
+        <div class="heading ion-padding">
+            <h1>¡Bienvenido Deportista!</h1>
+            <p>Inicie sesión para saber dónde jugar!</p>
+        </div>
+
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+            <div class="login-form ion-padding">
+                <div class="form-input">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <ion-item>
+                        <ion-input label="Correo" labelPlacement="floating" placeholder="Ingrese su correo" formControlName="correo"></ion-input>
+                    </ion-item>
+                    <div *ngIf="loginForm.controls['correo'].invalid && loginForm.controls['correo'].touched" class="error">
+                        Correo es obligatorio y debe ser válido.
+                    </div>
+                </div>
+
+                <div class="form-input">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <ion-item>
+                        <ion-input label="Contraseña" labelPlacement="floating" placeholder="Ingrese su contraseña" type="password" formControlName="contraseña"></ion-input>
+                    </ion-item>
+                    <div *ngIf="loginForm.controls['contraseña'].invalid && loginForm.controls['contraseña'].touched" class="error">
+                        Contraseña es obligatoria.
+                    </div>
+                </div>
+
+                <ion-button class="signup-button2" size="small" fill="outline" routerLink="/recupcontra">Olvidé mi contraseña</ion-button>
+            </div>
+
+            <div class="action-button ion-padding">
+                <ion-button size="large" class="login-button" type="submit" [disabled]="loginForm.invalid">Iniciar sesión</ion-button>
+                <ion-button class="signup-button1" size="large" fill="outline" routerLink="/registro">Quiero registrarme</ion-button>
+            </div>
+        </form>
+    </div>
+</ion-content>

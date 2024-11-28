@@ -1,0 +1,37 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/principal"></ion-back-button>
+        </ion-buttons>
+        <ion-title>perfil</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content class="profile-container">
+    <div *ngIf="imagen">
+        <ion-avatar class="profile-image">
+            <img [src]="imagen" alt="Foto de perfil" />
+        </ion-avatar>
+    </div>
+    <ion-list>
+        <ion-item>
+            <ion-label>Nombre</ion-label>
+            <ion-input [value]="Usuario.nombre" disabled></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Email</ion-label>
+            <ion-input [value]="Usuario.email" disabled></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Contraseña</ion-label>
+            <ion-input [value]="Usuario.contrasena" type="password" disabled></ion-input>
+        </ion-item>
+    </ion-list>
+
+
+    <div class="photo-buttons">
+        <ion-button (click)="takePicture()">Seleccionar de la Galería </ion-button>
+        <ion-button (click)="selectFromGallery()">Tomar Foto</ion-button>
+    </div>
+</ion-content>

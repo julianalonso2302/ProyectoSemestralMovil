@@ -1,0 +1,79 @@
+ion-content {
+    --background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)), url("/assets/loginfutbolpadel.jpg") no-repeat center center / cover;
+}
+
+ion-header {
+    --background: #3880ff;
+    --color: #ffffff;
+}
+
+ion-toolbar {
+    --ion-background-color: #3880ff;
+    --ion-text-color: #ffffff;
+    text-align: center;
+}
+
+ion-card {
+    margin: 16px;
+    border-radius: 8px;
+}
+
+ion-card-header {
+    --background: #ffffff;
+    border-bottom: 1px solid #ddd;
+}
+
+ion-card-title {
+    font-size: 1.2em;
+    color: #333;
+}
+
+ion-card-content {
+    padding: 16px;
+    background-color: #ffffff;
+}
+
+ion-item {
+    --background: #ffffff;
+    margin-bottom: 8px;
+}
+
+ion-label {
+    font-weight: bold;
+}
+
+ion-input,
+ion-datetime {
+    --background: #f9f9f9;
+    --placeholder-color: #999999;
+}
+
+ion-button {
+    margin-top: 8px;
+    --border-radius: 4px;
+}
+
+ion-button.expand {
+    width: 100%;
+}
+
+ion-button[color="primary"] {
+    --background: #3880ff;
+    --color: #ffffff;
+}
+
+ion-button[color="danger"] {
+    --background: #eb445a;
+    --color: #ffffff;
+}
+
+ion-button[color="success"] {
+    --background: #2dd36f;
+    --color: #ffffff;
+}
+
+.error-message {
+    color: #eb445a;
+    font-size: 0.9em;
+    margin-top: 4px;
+}

@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Reservar Cancha de Fútbol</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <form (ngSubmit)="confirmarReserva()">
+        <ion-item>
+            <ion-label>Canchas Disponibles</ion-label>
+            <ion-select [(ngModel)]="selectedCancha" name="cancha" required>
+                <ion-select-option *ngFor="let cancha of canchasDisponibles" [value]="cancha.id">
+                    {{ cancha.nombre }}
+                </ion-select-option>
+            </ion-select>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Fecha</ion-label>
+            <ion-datetime [(ngModel)]="selectedDate" name="fecha" [min]="minDate" required></ion-datetime>
+        </ion-item>
+
+        <ion-item>
+            <ion-select [(ngModel)]="selectedHour" name="horario" required>
+                <ion-select-option *ngFor="let hora of horasPredeterminadas" [value]="hora">
+                    {{ hora }}
+                </ion-select-option>
+            </ion-select>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Correo Electrónico</ion-label>
+            <ion-input [(ngModel)]="correo" name="correo" type="email" required></ion-input>
+        </ion-item>
+
+        <ion-button expand="full" type="submit">Confirmar Reserva</ion-button>
+    </form>
+</ion-content>

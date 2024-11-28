@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/principal"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Torneos</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-list>
+        <ion-item *ngFor="let torneo of torneos">
+            <!-- Imagen de la copa -->
+            <ion-avatar slot="start" class="trophy-image">
+                <img src="./assests/copa1.jpg" alt="Copa" />
+            </ion-avatar>
+            <ion-label>
+                <h2>{{ torneo.nombre }}</h2>
+                <p>{{ torneo.descripcion }}</p>
+            </ion-label>
+            <ion-button *ngIf="!torneo.unido" (click)="unirseATorneo(torneo)">Unirse</ion-button>
+            <ion-button *ngIf="torneo.unido" color="danger" (click)="salirDelTorneo(torneo)">
+                <ion-icon name="close"></ion-icon> Salir
+            </ion-button>
+        </ion-item>
+    </ion-list>
+</ion-content>
